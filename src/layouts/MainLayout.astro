@@ -2,11 +2,17 @@
 import Header from "@components/Header.astro";
 import "@styles/globals.css";
 
-const { title, lang } = Astro.props;
+interface Props {
+  title: string;
+  lang: string;
+  t: Function;
+}
+
+const { title, lang, t } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang} data-theme="dark">
+<html lang={lang} data-theme="dark" class="scroll-smooth mocha">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -15,8 +21,8 @@ const { title, lang } = Astro.props;
     <title>{title}</title>
   </head>
 
-  <body class="min-h-screen bg-base-100">
-    <Header />
+  <body class="min-h-screen bg-base-100 text-base-content">
+    <Header lang={lang} t={t} />
 
     <main class="container mx-auto px-4 py-8">
       <slot />

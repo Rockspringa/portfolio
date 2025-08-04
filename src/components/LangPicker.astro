@@ -2,15 +2,28 @@
 import { languages } from "@i18n/ui";
 import { getRouteFromUrl } from "@i18n/utils";
 
+interface Props {
+  lang: string;
+}
+
 const route = getRouteFromUrl(Astro.url);
+const { lang: currentLang } = Astro.props;
 ---
 
-<ul>
+<ul class="flex items-center">
   {
-    Object.entries(languages).map(([lang, label]) => (
-      <li>
-        <a href={`/${lang}/${route || ""}`}>{label}</a>
-      </li>
-    ))
+    Object.entries(languages)
+      .map(([lang, _]) => (
+        <li>
+          <a
+            class="btn btn-ghost btn-sm btn-secondary"
+            class:list={lang === currentLang ? "text-info" : ""}
+            href={`/${lang}/${route || ""}`}
+          >
+            {lang.toUpperCase()}
+          </a>
+        </li>
+        <li class="text-info text-2xl last:hidden">/</li>
+      ))
   }
 </ul>

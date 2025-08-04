@@ -1,4 +1,5 @@
 // @ts-check
+import alpinejs from "@astrojs/alpinejs";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
@@ -7,6 +8,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
   i18n: {
     locales: ["es", "en"],
     defaultLocale: "es",
@@ -14,4 +16,6 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+
+  integrations: [alpinejs()],
 });

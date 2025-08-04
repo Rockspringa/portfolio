@@ -1,15 +1,22 @@
 ---
 import LangPicker from "@components/LangPicker.astro";
+
+interface Props {
+  lang: string;
+  t: Function;
+}
+
+const { lang, t } = Astro.props;
 ---
 
 <header class="navbar bg-base-200 shadow-lg">
   <div class="flex-1">
-    <a href="/" class="btn btn-ghost text-xl"></a>
+    <a href="/" class="btn btn-ghost text-xl">{t("header.title")}</a>
   </div>
 
   <nav class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <LangPicker />
+      <LangPicker lang={lang} />
     </ul>
   </nav>
 </header>

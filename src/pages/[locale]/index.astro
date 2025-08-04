@@ -1,0 +1,16 @@
+---
+import Hero from "@components/Hero.astro";
+import { useTranslations } from "@i18n/utils";
+import MainLayout from "@layouts/MainLayout.astro";
+
+export function getStaticPaths(): { params: { locale: "en" | "es" } }[] {
+  return [{ params: { locale: "es" } }, { params: { locale: "en" } }];
+}
+
+const { locale } = Astro.params;
+const t = useTranslations(locale);
+---
+
+<MainLayout title={t("projects.title")} lang={locale} t={t}>
+  <Hero t={t} />
+</MainLayout>

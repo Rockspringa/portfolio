@@ -4,9 +4,19 @@ import { defineCollection, z } from "astro:content";
 const repoSchema = z.object({
   title: z.string(),
   description: z.string(),
-  techs: z.array(z.string()),
-  repoUrl: z.string(),
-  demoUrl: z.string(),
+  techs: z.array(
+    z.object({
+      name: z.string(),
+      icon: z.string(),
+    })
+  ),
+  repoUrls: z.array(
+    z.object({
+      url: z.string(),
+      label: z.string().optional(),
+    })
+  ),
+  demoUrl: z.string().optional(),
   image: z.string(),
 });
 

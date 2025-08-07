@@ -1,7 +1,9 @@
 ---
 import Hero from "@components/Hero.astro";
+import RepoCard from "@components/RepoCard.astro";
 import { useTranslations } from "@i18n/utils";
 import MainLayout from "@layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
 
 export function getStaticPaths(): { params: { locale: "en" | "es" } }[] {
   return [{ params: { locale: "es" } }, { params: { locale: "en" } }];
@@ -9,8 +11,28 @@ export function getStaticPaths(): { params: { locale: "en" | "es" } }[] {
 
 const { locale } = Astro.params;
 const t = useTranslations(locale);
+const repos = await getCollection(`repos-${locale}`);
 ---
 
-<MainLayout title={t("projects.title")} lang={locale} t={t}>
+<MainLayout title={t("base.title")} lang={locale} t={t}>
   <Hero t={t} />
+
+  <section id="projects" class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-12 text-center">{t("projects.title")}</h2>
+
+      <div class="space-y-4">
+        {
+          repos.map((repo, index) => (
+            <RepoCard
+              repo={repo.data}
+              slug={repo.id}
+              isEven={index % 2 === 0}
+              t={t}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </MainLayout>

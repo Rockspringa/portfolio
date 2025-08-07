@@ -1,14 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
 @import "tailwindcss";
+@import "@catppuccin/tailwindcss/mocha.css";
+
 @plugin "daisyui" {
   themes: false;
 }
 
-@import "@catppuccin/tailwindcss/mocha.css";
-
 @plugin "../mocha.config.ts";
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 body {
   @apply bg-base-100 text-base-content;
+}
+
+@keyframes pixel-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pixel-pulse {
+  animation: pixel-pulse 2s infinite;
 }

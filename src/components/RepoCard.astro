@@ -1,5 +1,7 @@
 ---
+import type { Translator } from "@i18n/utils";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 interface Props {
   repo: {
@@ -11,7 +13,7 @@ interface Props {
   };
   slug: string;
   isEven: boolean;
-  t: Function;
+  t: Translator;
 }
 
 const { repo, slug, isEven, t } = Astro.props;
@@ -30,8 +32,8 @@ const { repo, slug, isEven, t } = Astro.props;
       <figure
         class="relative w-full h-full bg-base-300 overflow-hidden shadow-xl"
       >
-        <img
-          src={repo.image}
+        <Image
+          src={import(`../${repo.image}`)}
           alt={repo.title}
           class="absolute top-0 inset-0 object-cover w-full h-full"
         />
@@ -40,7 +42,7 @@ const { repo, slug, isEven, t } = Astro.props;
 
     <main
       class="p-8 flex flex-col row-span-2 md:col-span-3 md:row-span-1"
-      class:list={isEven ? "md:order-2" : "md:order-1 items-end text-right"}
+      class:list={isEven ? "md:order-2" : "md:order-1 md:items-end md:text-right"}
     >
       <h3 class="text-3xl text-primary font-bold mb-4">{repo.title}</h3>
       <p class="text-lg mb-4 shrink-0">{repo.description}</p>

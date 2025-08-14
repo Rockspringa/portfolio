@@ -1,17 +1,38 @@
 ---
 import LangPicker from "@components/LangPicker.astro";
+import type { Translator } from "@i18n/utils";
 
 interface Props {
   lang: string;
-  t: Function;
+  t: Translator;
 }
 
 const { lang, t } = Astro.props;
 ---
 
 <header class="fixed navbar bg-ctp-crust shadow-lg z-10">
-  <div class="flex-1">
+  <div>
     <a href="/" class="btn btn-ghost text-xl">{t("header.title")}</a>
+  </div>
+
+  <div class="flex-none mx-auto">
+    <ul class="menu menu-horizontal px-1 gap-2 hidden md:flex">
+      <li>
+        <a href="#hero" class="btn btn-ghost btn-sm">
+          {t("header.hero")}
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="btn btn-ghost btn-sm">
+          {t("header.about")}
+        </a>
+      </li>
+      <li>
+        <a href="#projects" class="btn btn-ghost btn-sm">
+          {t("header.projects")}
+        </a>
+      </li>
+    </ul>
   </div>
 
   <nav class="flex-none">

@@ -1,14 +1,16 @@
 ---
 import Header from "@components/Header.astro";
+import type { Translator } from "@i18n/utils";
 import "@styles/globals.css";
 
 interface Props {
   title: string;
   lang: string;
-  t: Function;
+  t: Translator;
+  class?: string;
 }
 
-const { title, lang, t } = Astro.props;
+const { title, lang, t, class: className } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,7 +26,7 @@ const { title, lang, t } = Astro.props;
   <body class="min-h-screen bg-base-100 text-base-content">
     <Header lang={lang} t={t} />
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4" class:list={className}>
       <slot />
     </main>
   </body>

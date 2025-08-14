@@ -7,8 +7,11 @@ export const defaultLang = "es" as keyof typeof languages;
 
 export const ui = {
   es: {
-    "base.title": "Portafolio",
-    "header.title": "Portafolio",
+    "base.title": "Portfolio",
+    "header.title": "Portfolio",
+    "header.hero": "Inicio",
+    "header.about": "Sobre mí",
+    "header.projects": "Proyectos",
     "projects.title": "Proyectos Destacados",
     "hero.title.first": "Hola,",
     "hero.title.last": "soy Dylan",
@@ -24,6 +27,9 @@ export const ui = {
   en: {
     "base.title": "Portfolio",
     "header.title": "Portfolio",
+    "header.hero": "Home",
+    "header.about": "About Me",
+    "header.projects": "Projects",
     "projects.title": "Highlighted Projects",
     "hero.title.first": "Hi,",
     "hero.title.last": "I'm Dylan",

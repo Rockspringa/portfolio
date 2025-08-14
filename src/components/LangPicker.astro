@@ -10,7 +10,7 @@ const route = getRouteFromUrl(Astro.url);
 const { lang: currentLang } = Astro.props;
 ---
 
-<ul class="flex items-center">
+<ul class="flex items-center ml-4">
   {
     Object.entries(languages)
       .map(([lang, _]) => (

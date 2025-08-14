@@ -1,12 +1,22 @@
 ---
+import About from "@components/About.astro";
 import Hero from "@components/Hero.astro";
 import RepoCard from "@components/RepoCard.astro";
+import { languages } from "@i18n/ui";
 import { useTranslations } from "@i18n/utils";
 import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
-export function getStaticPaths(): { params: { locale: "en" | "es" } }[] {
-  return [{ params: { locale: "es" } }, { params: { locale: "en" } }];
+type Language = keyof typeof languages;
+
+type Params = {
+  params: { locale: Language };
+}[];
+
+export function getStaticPaths(): Params {
+  return (Object.keys(languages) as Language[]).map((lang) => ({
+    params: { locale: lang },
+  }));
 }
 
 const { locale } = Astro.params;
@@ -16,10 +26,13 @@ const repos = await getCollection(`repos-${locale}`);
 
 <MainLayout title={t("base.title")} lang={locale} t={t}>
   <Hero t={t} />
+  <About t={t} />
 
-  <section id="projects" class="py-20">
+  <section id="projects" class="pb-8 pt-24">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-center">{t("projects.title")}</h2>
+      <h2 class="text-4xl font-bold mb-12 text-center">
+        {t("projects.title")}
+      </h2>
 
       <div class="space-y-4">
         {

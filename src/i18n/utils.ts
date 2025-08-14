@@ -5,7 +5,7 @@ export function getRouteFromUrl(url: URL) {
 }
 
 export function useTranslations(lang: keyof typeof ui) {
-  return function t(key: keyof (typeof ui)[typeof lang], ...args: any[]) {
+  return function t(key: keyof (typeof ui)[typeof lang], ...args: unknown[]) {
     const translation = key in ui[lang] ? ui[lang][key] : ui[defaultLang][key];
     if (typeof translation === "function") {
       return translation(...args);
@@ -13,3 +13,5 @@ export function useTranslations(lang: keyof typeof ui) {
     return translation;
   };
 }
+
+export type Translator = ReturnType<typeof useTranslations>;

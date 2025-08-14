@@ -13,16 +13,14 @@ body {
   @apply bg-base-100 text-base-content;
 }
 
-@keyframes pixel-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
+.point-l {
+  clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
 }
 
-.pixel-pulse {
-  animation: pixel-pulse 2s infinite;
+.point-r {
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+.point-lr {
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 }

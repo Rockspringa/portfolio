@@ -1,0 +1,85 @@
+---
+import type { Translator } from "@i18n/utils";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  t: Translator;
+}
+
+const { t } = Astro.props;
+---
+
+<section
+  id="about"
+  class="relative pt-5 pb-10 bg-base-200 rounded-2xl md:my-32 md:py-20"
+>
+  <div class="container mx-auto px-8 md:px-2 md:w-4/5">
+    <h2 class="text-5xl font-bold mb-12 text-center text-primary">
+      {t("about.title")}
+    </h2>
+
+    <div>
+      <p class="text-lg mb-4">{t("about.description.1")}</p>
+      <p class="text-lg mb-4">{t("about.description.2")}</p>
+      <p class="text-lg">{t("about.description.3")}</p>
+    </div>
+  </div>
+
+  <div class="opacity-15 pointer-events-none">
+    <div
+      class="absolute top-0 left-0 h-full w-fit flex flex-col justify-between"
+    >
+      <div class="bg-ctp-red point-r w-fit px-6 py-3">
+        <Icon name="java" class="w-24 h-24 text-ctp-crust" />
+      </div>
+
+      <div class="bg-ctp-green point-r w-fit px-6 py-3">
+        <Icon name="spring" class="w-24 h-24 text-ctp-crust" />
+      </div>
+
+      <div class="bg-ctp-blue point-r w-fit px-6 py-3">
+        <Icon name="postgres" class="w-24 h-24 text-ctp-crust" />
+      </div>
+    </div>
+
+    <div
+      class="absolute top-0 right-1/2 translate-x-1/2 md:left-36 md:translate-x-0 h-full w-fit flex flex-col justify-evenlys"
+    >
+      <div class="bg-ctp-blue point-lr w-fit px-6 py-3">
+        <Icon name="docker" class="w-24 h-24 text-ctp-crust" />
+      </div>
+
+      <div class="bg-ctp-yellow point-lr w-fit px-6 py-3">
+        <Icon name="python" class="w-24 h-24 text-ctp-crust" />
+      </div>
+    </div>
+
+    <div
+      class="absolute hidden top-0 right-36 h-full w-fit md:flex flex-col justify-evenly"
+    >
+      <div class="bg-ctp-yellow point-lr w-fit px-6 py-3">
+        <Icon name="express" class="w-24 h-24 text-ctp-crust" />
+      </div>
+
+      <div class="bg-ctp-peach point-lr w-fit px-6 py-3">
+        <Icon name="postman" class="w-24 h-24 text-ctp-crust" />
+      </div>
+    </div>
+
+    <div
+      class="absolute top-0 right-0 h-full w-fit flex flex-col justify-between"
+    >
+      <div class="bg-ctp-blue point-l w-fit px-6 py-3">
+        <Icon name="typescript" class="w-24 h-24 text-ctp-crust" />
+      </div>
+
+      <div class="bg-ctp-red point-l w-fit px-6 py-3">
+        <Icon name="angular" class="w-24 h-24 text-ctp-crust" />
+      </div>
+
+      <div class="bg-ctp-green point-l w-fit px-6 py-3">
+        <Icon name="mongo" class="w-24 h-24 text-ctp-crust" />
+      </div>
+    </div>
+  </div>
+</section>

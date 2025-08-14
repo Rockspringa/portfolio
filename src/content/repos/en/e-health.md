@@ -1,7 +1,7 @@
 ---
 title: Hospital Management System
 description: Centralized project with CI/CD and micro services backend for managing patients, consultations, employees and medicines.
-image: /assets/images/placeholder.jpg
+image: placeholder.jpg
 techs:
   - name: Java
     icon: java

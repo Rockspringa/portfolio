@@ -18,5 +18,5 @@ export default defineConfig({
     },
   },
 
-  integrations: [alpinejs(), icon()],
+  integrations: [alpinejs(), icon({ iconDir: "src/assets/icons" })],
 });

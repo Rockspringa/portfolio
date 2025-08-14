@@ -1,7 +1,7 @@
 ---
 title: Clasificador de Tumores Benignos
 description: Proyecto sobre entrenamiento de redes neuronales para clasificar tumores de mama entre benignos y malignos.
-image: /assets/images/placeholder.jpg
+image: placeholder.jpg
 techs:
   - name: Python
     icon: python

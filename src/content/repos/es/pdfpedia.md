@@ -1,7 +1,7 @@
 ---
 title: Gestor y publicador de revistas
 description: Aplicación centrada en la integración de servicios de terceros para administrar revistas, usuarios y publicaciones.
-image: /assets/images/placeholder.jpg
+image: placeholder.jpg
 techs:
   - name: Java
     icon: java

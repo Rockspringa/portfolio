@@ -1,7 +1,7 @@
 ---
 title: Sistema de Gestión Hospitalaria
 description: Proyecto de centrado en CI/CD y un backend de micro servicios para administrar pacientes, consultas, empleados y medicinas.
-image: /assets/images/placeholder.jpg
+image: placeholder.jpg
 techs:
   - name: Java
     icon: java

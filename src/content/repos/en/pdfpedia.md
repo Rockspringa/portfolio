@@ -1,7 +1,7 @@
 ---
 title: Journal Management Application
 description: Project centralized on third party integration services for managing journals, users and publications.
-image: /assets/images/placeholder.jpg
+image: placeholder.jpg
 techs:
   - name: Java
     icon: java

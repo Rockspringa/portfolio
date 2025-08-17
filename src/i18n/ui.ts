@@ -37,6 +37,17 @@ export const ui = {
       (args[0] as [])?.length > 1 ? "Repositorios" : "Repositorio",
     "project.details.repositories.source": (...args: unknown[]) =>
       args[0] ? `Código ${args[0]}` : `Ver código`,
+    "contact.title": "Contacto",
+    "contact.description":
+      "¿Interesado en trabajar juntos o tienes alguna pregunta? No dudes en contactarme.",
+    "contact.button": "Enviar mensaje",
+    "footer.title": "Dylan Antonio Elías Vásquez",
+    "footer.description": "Desarrollador Backend",
+    "footer.github.personal": "Personal",
+    "footer.github.academic": "Académico",
+    "footer.disclaimer": () =>
+      `© ${new Date().getFullYear()} Dylan Antonio Elías Vásquez. Todos los derechos reservados.`,
+    "footer.disclaimer.dev": "Desarrollado con Astro, Tailwind CSS y DaisyUI",
   },
   en: {
     "base.title": "Portfolio",
@@ -69,5 +80,16 @@ export const ui = {
       (args[0] as [])?.length > 1 ? "Repositories" : "Repository",
     "project.details.repositories.source": (...args: unknown[]) =>
       args[0] ? `View ${args[0]} code` : `View code`,
+    "contact.title": "Contact",
+    "contact.description":
+      "Are you interested in working together or have any questions? Don't hesitate to contact me.",
+    "contact.button": "Send message",
+    "footer.title": "Dylan Antonio Elías Vásquez",
+    "footer.description": "Backend Developer",
+    "footer.github.personal": "Personal",
+    "footer.github.academic": "Academic",
+    "footer.disclaimer": () =>
+      `© ${new Date().getFullYear()} Dylan Antonio Elías Vásquez. All rights reserved.`,
+    "footer.disclaimer.dev": "Developed with Astro, Tailwind CSS and DaisyUI",
   },
 } as const;

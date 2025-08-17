@@ -1,5 +1,4 @@
 // @ts-check
-import alpinejs from "@astrojs/alpinejs";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
@@ -18,5 +17,5 @@ export default defineConfig({
     },
   },
 
-  integrations: [alpinejs(), icon({ iconDir: "src/assets/icons" })],
+  integrations: [icon({ iconDir: "src/assets/icons" })],
 });

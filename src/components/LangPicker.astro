@@ -18,7 +18,7 @@ const { lang: currentLang } = Astro.props;
           <a
             class="btn btn-ghost btn-sm btn-secondary"
             class:list={lang === currentLang ? "text-info" : ""}
-            href={`/${lang}/${route || ""}`}
+            href=`/${lang}/${route || ""}`
           >
             {lang.toUpperCase()}
           </a>

@@ -59,7 +59,10 @@ if (!currentImage) {
 <MainLayout title={t("base.title")} lang={lang} t={t}>
   <section class="pt-28">
     <div class="container mx-auto px-4">
-      <a href="../" class="inline-flex items-center text-accent mb-8 gap-2">
+      <a
+        href=`/${lang}`
+        class="inline-flex items-center text-accent mb-8 gap-2"
+      >
         <Icon name="arrow-left" class="w-6 h-3" />
         {t("project.back")}
       </a>
@@ -132,7 +135,7 @@ if (!currentImage) {
           "[&_p]:text-xl/8 [&_p]:my-1",
           "[&_code]:font-mono [&_code]:text-accent [&_code]:bg-ctp-crust [&_code]:px-2 [&_code]:py-0.5 [&_code]:rounded",
           "[&_ul]:list-disc [&_ul]:pl-4 [&_ul]:md:pl-12",
-          "[&_li]:my-2"
+          "[&_li]:my-2",
         ]}
       >
         <RepoContent />

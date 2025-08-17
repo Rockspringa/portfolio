@@ -31,9 +31,7 @@ if (!currentImage) {
 }
 ---
 
-<article
-  class="container my-8 rounded-xl overflow-hidden bg-primary-content"
->
+<article class="container my-8 rounded-xl overflow-hidden bg-primary-content">
   <div
     class="grid grid-cols-1 grid-rows-3 md:grid-cols-5 md:grid-rows-1 items-center"
   >
@@ -76,11 +74,17 @@ if (!currentImage) {
         class="w-full flex flex-col flex-wrap gap-1 md:gap-4"
         class:list={isEven ? "sm:flex-row" : "sm:flex-row-reverse"}
       >
+        <a
+          href=`projects/${slug.split("/").pop()}`
+          class="btn btn-primary btn-sm"
+        >
+          {t("repoCard.view")}
+        </a>
         {
           repo.repoUrls.map(({ url, label }) => (
             <a
               href={url}
-              class="btn btn-primary btn-sm"
+              class="btn btn-outline btn-sm"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -88,12 +92,6 @@ if (!currentImage) {
             </a>
           ))
         }
-        <a
-          href={`projects/${slug.split("/").pop()}`}
-          class="btn btn-outline btn-sm"
-        >
-          {t("repoCard.view")}
-        </a>
       </div>
     </main>
   </div>

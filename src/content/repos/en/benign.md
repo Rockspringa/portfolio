@@ -1,7 +1,7 @@
 ---
 title: Benign Tumors Classifier
 description: Project about training neural networks to classify mama tumors as benign or malignant.
-image: placeholder.jpg
+image: benign-all.png
 techs:
   - name: Python
     icon: python

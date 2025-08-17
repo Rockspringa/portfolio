@@ -20,14 +20,9 @@ const repoSchema = z.object({
   image: z.string(),
 });
 
-const reposEs = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/repos/es" }),
+const repos = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/repos" }),
   schema: repoSchema,
 });
 
-const reposEn = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/repos/en" }),
-  schema: repoSchema,
-});
-
-export const collections = { "repos-es": reposEs, "repos-en": reposEn };
+export const collections = { repos: repos };

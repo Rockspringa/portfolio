@@ -28,8 +28,15 @@ export const ui = {
     "about.description.3":
       "Mi objetivo es seguir creciendo como desarrollador, aprendiendo nuevas tecnologías y enfrentando desafíos en el mundo del desarrollo de software.",
     "repoCard.view": "Ver detalles",
-    "repoCard.source": (...args: any[]) =>
-      args[0] ? `Ver código del ${args[0]}` : `Ver código`,
+    "repoCard.source": (...args: unknown[]) =>
+      args[0] ? `Ver código ${args[0]}` : `Ver código`,
+    "project.back": "Volver a proyectos",
+    "project.details": "Detalles del proyecto",
+    "project.details.technologies": "Tecnologías",
+    "project.details.repositories": (...args: unknown[]) =>
+      (args[0] as [])?.length > 1 ? "Repositorios" : "Repositorio",
+    "project.details.repositories.source": (...args: unknown[]) =>
+      args[0] ? `Código ${args[0]}` : `Ver código`,
   },
   en: {
     "base.title": "Portfolio",
@@ -53,7 +60,14 @@ export const ui = {
     "about.description.3":
       "My goal is to continue growing as a developer, learning new technologies, and facing challenges in the world of software development.",
     "repoCard.view": "View Details",
-    "repoCard.source": (...args: any[]) =>
+    "repoCard.source": (...args: unknown[]) =>
+      args[0] ? `View ${args[0]} code` : `View code`,
+    "project.back": "Back to Projects",
+    "project.details": "Project Details",
+    "project.details.technologies": "Technologies",
+    "project.details.repositories": (...args: unknown[]) =>
+      (args[0] as [])?.length > 1 ? "Repositories" : "Repository",
+    "project.details.repositories.source": (...args: unknown[]) =>
       args[0] ? `View ${args[0]} code` : `View code`,
   },
 } as const;

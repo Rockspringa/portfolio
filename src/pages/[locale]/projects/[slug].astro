@@ -1,0 +1,142 @@
+---
+import { languages } from "@i18n/ui";
+import { useTranslations } from "@i18n/utils";
+import MainLayout from "@layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import type { DataEntryMap } from "astro:content";
+import { getCollection, render } from "astro:content";
+
+type Language = keyof typeof languages;
+
+type Params = {
+  params: {
+    locale: Language;
+    slug: string;
+  };
+  props: {
+    lang: Language;
+    repo: DataEntryMap["repos"][keyof DataEntryMap["repos"]];
+  };
+}[];
+
+export async function getStaticPaths(): Promise<Params> {
+  return await (Object.keys(languages) as Language[]).reduce(
+    async (paths, lang) => {
+      const repos = await getCollection(`repos`, ({ id }) =>
+        id.startsWith(lang)
+      );
+
+      const reposPaths = repos.map((repo) => ({
+        params: { locale: lang, slug: repo.id.split("/").pop()! },
+        props: { lang, repo },
+      }));
+
+      return reposPaths.concat(await paths);
+    },
+    Promise.resolve([] as Params)
+  );
+}
+
+const { lang, repo } = Astro.props;
+const { Content: RepoContent } = await render(repo);
+
+const t = useTranslations(lang);
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/*"
+);
+
+const currentImage = images[`/src/assets/images/${repo.data.image}`];
+if (!currentImage) {
+  console.error(images);
+  throw new Error(
+    `"${repo.data.image}" does not exist in: "src/assets/images/" folder`
+  );
+}
+---
+
+<MainLayout title={t("base.title")} lang={lang} t={t}>
+  <section class="pt-28">
+    <div class="container mx-auto px-4">
+      <a href="../" class="inline-flex items-center text-accent mb-8 gap-2">
+        <Icon name="arrow-left" class="w-6 h-3" />
+        {t("project.back")}
+      </a>
+
+      <h1 class="text-4xl text-primary font-bold mb-6">{repo.data.title}</h1>
+      <p class="text-xl mb-8">{repo.data.description}</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-8">
+        <div class="lg:col-span-2">
+          <figure
+            class="relative w-full aspect-square md:aspect-2/1 bg-base-300 rounded-xl overflow-hidden mb-6"
+          >
+            <Image
+              src={currentImage()}
+              alt={repo.data.title}
+              class="absolute top-0 inset-0 object-cover w-full h-full"
+            />
+          </figure>
+        </div>
+
+        <div
+          class="bg-base-300 rounded-xl p-6 h-fit flex flex-col gap-6 md:gap-8"
+        >
+          <h3 class="text-xl text-primary font-bold">
+            {t("project.details")}
+          </h3>
+
+          <div>
+            <h4 class="font-bold text-ctp-subtext0">
+              {t("project.details.technologies")}
+            </h4>
+            <div class="flex flex-wrap gap-2 mt-2">
+              {
+                repo.data.techs.map((tech) => (
+                  <span class="gap-1 badge badge-soft badge-sm badge-info">
+                    <Icon name={tech.icon} class="w-4 h-4 py-0.5" />
+                    {tech.name}
+                  </span>
+                ))
+              }
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-ctp-subtext0">
+              {t("project.details.repositories", repo.data.repoUrls)}
+            </h4>
+            <div class="flex flex-wrap gap-4 mt-2">
+              {
+                repo.data.repoUrls.map(({ url, label }) => (
+                  <a
+                    href={url}
+                    target="_blank"
+                    class="btn btn-outline btn-primary btn-sm"
+                  >
+                    {t("project.details.repositories.source", label)}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <article
+        class="py-12 flex flex-col gap-6 px-1"
+        class:list={[
+          "[&_h2]:text-4xl [&_h2]:font-bold [&_h2]:text-center [&_h3]:mt-6",
+          "[&_h3]:text-2xl [&_h3]:text-primary [&_h3]:font-bold [&_h3]:mt-1",
+          "[&_p]:text-xl/8 [&_p]:my-1",
+          "[&_code]:font-mono [&_code]:text-accent [&_code]:bg-ctp-crust [&_code]:px-2 [&_code]:py-0.5 [&_code]:rounded",
+          "[&_ul]:list-disc [&_ul]:pl-4 [&_ul]:md:pl-12",
+          "[&_li]:my-2"
+        ]}
+      >
+        <RepoContent />
+      </article>
+    </div>
+  </section>
+</MainLayout>

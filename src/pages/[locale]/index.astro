@@ -21,7 +21,7 @@ export function getStaticPaths(): Params {
 
 const { locale } = Astro.params;
 const t = useTranslations(locale);
-const repos = await getCollection(`repos-${locale}`);
+const repos = await getCollection("repos", ({ id }) => id.startsWith(locale));
 ---
 
 <MainLayout title={t("base.title")} lang={locale} t={t}>
@@ -29,7 +29,7 @@ const repos = await getCollection(`repos-${locale}`);
   <About t={t} />
 
   <section id="projects" class="pb-8 pt-24">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto">
       <h2 class="text-4xl font-bold mb-12 text-center">
         {t("projects.title")}
       </h2>

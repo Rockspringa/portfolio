@@ -17,11 +17,12 @@ interface Props {
 }
 
 const { repo, slug, isEven, t } = Astro.props;
+
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/images/*"
 );
-const currentImage = images[`/src/assets/images/${repo.image}`];
 
+const currentImage = images[`/src/assets/images/${repo.image}`];
 if (!currentImage) {
   console.error(images);
   throw new Error(
@@ -31,7 +32,7 @@ if (!currentImage) {
 ---
 
 <article
-  class="container mx-4 my-8 rounded-xl overflow-hidden bg-primary-content"
+  class="container my-8 rounded-xl overflow-hidden bg-primary-content"
 >
   <div
     class="grid grid-cols-1 grid-rows-3 md:grid-cols-5 md:grid-rows-1 items-center"
@@ -87,7 +88,10 @@ if (!currentImage) {
             </a>
           ))
         }
-        <a href={`projects/${slug}`} class="btn btn-outline btn-sm">
+        <a
+          href={`projects/${slug.split("/").pop()}`}
+          class="btn btn-outline btn-sm"
+        >
           {t("repoCard.view")}
         </a>
       </div>

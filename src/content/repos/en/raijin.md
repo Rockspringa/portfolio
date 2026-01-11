@@ -47,16 +47,16 @@ This project is an end-to-end project management system designed from scratch to
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
 
-![View of the general project backlog with pending tasks and priorities.](/src/assets/images/backlog.png)
+![View of the general project backlog with pending tasks and priorities.](../../../assets/images/backlog.png)
 *Main screen of the product backlog, showing user stories with weight (story points) and priorities.*
 
-![Kanban board for an active sprint.](/src/assets/images/stories.png)
+![Kanban board for an active sprint.](../../../assets/images/stories.png)
 *Interactive Kanban board, managing the flow of tasks from "To Do" to "Done" with drag-and-drop functionality.*
 
-![Log of changes and activity on user stories.](/src/assets/images/stories-log.png)
+![Log of changes and activity on user stories.](../../../assets/images/stories-log.png)
 *Detailed view of the event log and activity for a user story, recording every change and participant.*
 
-![Financial report of profits and expenses.](/src/assets/images/report.png)
+![Financial report of profits and expenses.](../../../assets/images/report.png)
 *Example of a financial profit report, consolidating income and operating expenses for the project.*
 
 </div>

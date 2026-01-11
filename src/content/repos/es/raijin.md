@@ -47,16 +47,16 @@ Este proyecto es un sistema integral de gestión de proyectos diseñado desde ce
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
 
-![Vista del Backlog general del proyecto con tareas pendientes y prioridades.](/src/assets/images/backlog.png)
+![Vista del Backlog general del proyecto con tareas pendientes y prioridades.](../../../assets/images/backlog.png)
 *Pantalla principal del backlog del producto, mostrando historias de usuario con ponderaciones (story points) y prioridades.*
 
-![Tablero Kanban para un sprint activo.](/src/assets/images/stories.png)
+![Tablero Kanban para un sprint activo.](../../../assets/images/stories.png)
 *Tablero Kanban interactivo, gestionando el flujo de tareas desde "Pendientes" hasta "Finalizadas" con movimiento de arrastrar y soltar.*
 
-![Registro de cambios y actividad en las historias de usuario.](/src/assets/images/stories-log.png)
+![Registro de cambios y actividad en las historias de usuario.](../../../assets/images/stories-log.png)
 *Vista detallada del registro de eventos y actividades de una historia de usuario, registrando cada cambio y participante.*
 
-![Reporte financiero de ganancias y gastos.](/src/assets/images/report.png)
+![Reporte financiero de ganancias y gastos.](../../../assets/images/report.png)
 *Ejemplo de reporte financiero de ganancias, consolidando ingresos y gastos operativos del proyecto.*
 
 </div>

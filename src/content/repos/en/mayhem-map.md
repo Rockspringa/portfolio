@@ -48,19 +48,19 @@ This project is a core microservice within a larger humanitarian architecture, f
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
 
-![Main screen showing several active alerts in card format.](/src/assets/images/disaster-cards.png)
+![Main screen showing several active alerts in card format.](../../../assets/images/disaster-cards.png)
 *Dashboard view with a list of active alerts, prioritized by impact.*
 
-![Earthquake details showing graphs and images.](/src/assets/images/earthquake-details.png)
+![Earthquake details showing graphs and images.](../../../assets/images/earthquake-details.png)
 *Details screen for a natural disaster (earthquake), displaying specific metrics like magnitude and depth.*
 
-![Same screen but with the location section and technical details.](/src/assets/images/earthquake-map-details.png)
+![Same screen but with the location section and technical details.](../../../assets/images/earthquake-map-details.png)
 *Interactive map and technical details of the epicenter location and impact on nearby towns.*
 
-![Details of a missing person alert, showing data variation.](/src/assets/images/missing-person-details.png)
+![Details of a missing person alert, showing data variation.](../../../assets/images/missing-person-details.png)
 *Example of a dynamic interface: details of a humanitarian alert (missing person) which vary significantly from a natural disaster.*
 
-![Event timeline showing the evolution of the disaster.](/src/assets/images/event-timeline.png)
+![Event timeline showing the evolution of the disaster.](../../../assets/images/event-timeline.png)
 *Detailed timeline showing the tracking and evolution of the disaster with timestamps and key locations.*
 
 </div>

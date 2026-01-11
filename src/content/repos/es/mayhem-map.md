@@ -48,19 +48,19 @@ Este proyecto es un microservicio fundamental dentro de una arquitectura humanit
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
 
-![Pantalla principal con varias alertas activas en formato de tarjetas.](/src/assets/images/disaster-cards.png)
+![Pantalla principal con varias alertas activas en formato de tarjetas.](../../../assets/images/disaster-cards.png)
 *Vista de dashboard con listado de alertas activas, priorizadas por impacto.*
 
-![Detalles de un terremoto mostrando gráficos e imágenes.](/src/assets/images/earthquake-details.png)
+![Detalles de un terremoto mostrando gráficos e imágenes.](../../../assets/images/earthquake-details.png)
 *Pantalla de detalles para un desastre natural (terremoto), mostrando métricas específicas como magnitud y profundidad.*
 
-![Misma pantalla pero con la sección de ubicación y detalles técnicos.](/src/assets/images/earthquake-map-details.png)
+![Misma pantalla pero con la sección de ubicación y detalles técnicos.](../../../assets/images/earthquake-map-details.png)
 *Mapa interactivo y detalles técnicos de la ubicación del epicentro y afectaciones en poblados cercanos.*
 
-![Detalles de una alerta de desaparición, mostrando la variación de datos.](/src/assets/images/missing-person-details.png)
+![Detalles de una alerta de desaparición, mostrando la variación de datos.](../../../assets/images/missing-person-details.png)
 *Ejemplo de interfaz dinámica: detalles de una alerta humanitaria (desaparición) que varían significativamente de un desastre natural.*
 
-![Cronología de eventos mostrando la evolución del desastre.](/src/assets/images/event-timeline.png)
+![Cronología de eventos mostrando la evolución del desastre.](../../../assets/images/event-timeline.png)
 *Cronología detallada que muestra el seguimiento y evolución del desastre con marcas de tiempo y ubicaciones clave.*
 
 </div>

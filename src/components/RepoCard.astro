@@ -46,6 +46,9 @@ if (!currentImage) {
           src={currentImage()}
           alt={repo.title}
           class="absolute top-0 inset-0 object-cover w-full h-full"
+          class:list={isEven
+            ? "mask-l-from-0 mask-l-from-transparent mask-l-to-15% mask-l-to-primary-content"
+            : "mask-r-from-0 mask-r-from-transparent mask-r-to-15% mask-r-to-primary-content"}
         />
       </figure>
     </header>
@@ -62,8 +65,8 @@ if (!currentImage) {
       <div class="flex flex-wrap gap-2 mb-6">
         {
           repo.techs.map((tech) => (
-            <span class="gap-1 badge badge-soft badge-sm badge-info">
-              <Icon name={tech.icon} class="w-4 h-4 py-0.5" />
+            <span class="gap-1 badge badge-soft badge-info">
+              <Icon name={tech.icon} class="size-5 py-0.5" />
               {tech.name}
             </span>
           ))
@@ -75,10 +78,11 @@ if (!currentImage) {
         class:list={isEven ? "sm:flex-row" : "sm:flex-row-reverse"}
       >
         <a
-          href=`projects/${slug.split("/").pop()}`
+          href=`/${slug.replace("/", "/projects/")}`
           class="btn btn-primary btn-sm"
         >
           {t("repoCard.view")}
+          <Icon name="arrow-left" class="size-3 rotate-[135deg]" />
         </a>
         {
           repo.repoUrls.map(({ url, label }) => (
@@ -88,6 +92,7 @@ if (!currentImage) {
               target="_blank"
               rel="noopener noreferrer"
             >
+              <Icon name="github" class="size-4" />
               {t("repoCard.source", label)}
             </a>
           ))

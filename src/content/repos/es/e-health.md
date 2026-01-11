@@ -1,7 +1,8 @@
 ---
 title: Sistema de Gestión Hospitalaria
-description: Proyecto de centrado en CI/CD y un backend de micro servicios para administrar pacientes, consultas, empleados y medicinas.
+description: Ecosistema escalable de microservicios diseñado para transformar la gestión hospitalaria mediante arquitectura cloud-native y despliegue automatizado.
 image: e-health-ward.png
+order: 2
 techs:
   - name: Java
     icon: java
@@ -22,35 +23,28 @@ repoUrls:
     label: Frontend
 ---
 
-## Descripción detallada
+## Un Sistema de Salud Inteligente
 
-### Backend
+Este proyecto no es solo una base de datos de pacientes; es una solución de infraestructura completa diseñada para entornos de alta disponibilidad, donde la integridad de los datos y la escalabilidad son críticas.
 
-- Diseño de la arquitectura de micro servicios
-- Cada servicio se encarga de manejar entidades específicas en su propia base de datos y la comunicación con otros servicios mediante REST APIs con `OpenFeign`
-- Seguridad de los datos usando `Spring Security`, mediante el uso de `JWT` y encriptación con `sha256`, en su propio servicio
-- El diseño incluye un API Gateway que se encarga de manejar las peticiones entrantes y redireccionarlas a los servicios correspondientes
+### Backend & Arquitectura de Microservicios
 
-### Frontend
+- **Arquitectura Distribuida:** Implementé un ecosistema de microservicios con `Spring Boot` donde cada módulo (pacientes, consultas, inventario) opera de forma autónoma con su propia base de datos, garantizando aislamiento y tolerancia a fallos.
+- **Comunicación Eficiente:** Orquestación de servicios mediante un **API Gateway** centralizado y comunicación inter-service optimizada con **OpenFeign**.
+- **Seguridad de Grado Bancario:** Sistema de autenticación robusto basado en **JWT** y encriptación SHA256, gestionado por un servicio de seguridad dedicado con `Spring Security`.
 
-- Basado en módulos de `Angular` aislados por roles y permisos
-- Estilizado con `Tailwind CSS` y `DaisyUI`
-- Diseño de la experiencia de usuario para ser responsivo y simple para los usuarios
+### Frontend & UX de Alto Rendimiento
 
-### Base de datos
+- **Control de Acceso (RBAC):** Interfaz desarrollada en `Angular` con carga optimizada (lazy loading) y módulos aislados según roles y permisos del personal médico.
+- **Diseño Moderno:** Interfaz responsiva y minimalista construida con **Tailwind CSS** y **DaisyUI**, priorizando la velocidad de uso en situaciones críticas.
 
-- Base de datos `PostgreSQL` utilizada para almacenar los datos de los usuarios, los pacientes, las consultas, los empleados y las medicinas
-- Scripts DDL utilizando `SQL` para la creación de cada base de datos
-- Scripts DML utilizando `SQL` para la inserción de datos base para configurar correctamente la base de datos
-- La base de datos se encuentra en `Neon`
-- Cada servicio tiene roles y permisos para acceder a sus respectivas tablas
+### Infraestructura de Datos
 
-### Despliegue
+- **Persistencia en la Nube:** Bases de datos relacionales gestionadas en **Neon (PostgreSQL)**, optimizadas mediante scripts DDL/DML personalizados.
+- **Seguridad a nivel de DB:** Implementación de políticas de privilegios mínimos donde cada microservicio solo accede a sus tablas correspondientes.
 
-- `Docker` para la construcción de imágenes de contenedores
-- `Docker Compose` para el despliegue de los servicios en local, con `develop.watch` para detectar cambios en el código y actualizar automáticamente los servicios
-- Imágenes de Docker optimizadas para bajar el tamaño de los contenedores y evitar problemas de seguridad básicos
-- `Docker Hub` para almacenar las imágenes de Docker
-- `Google Cloud Run` para el despliegue de las imágenes de Docker en la nube en el entorno de producción y de desarrollo
-- Integración continua con `GitHub Actions` para correr tests unitarios y reportes de cobertura
-- Entrega/despliegue continuo con `GitHub Actions` para la construcción de imágenes de Docker y despliegue de las imágenes de Docker en la nube
+### DevOps: CI/CD y Cloud-Native
+
+- **Contenedores Optimizados:** Uso de `Docker` con imágenes multi-stage para minimizar la superficie de ataque y el tamaño de los artefactos.
+- **Flujo CI/CD Moderno:** Pipeline automatizado en **GitHub Actions** que gestiona desde los unit tests hasta el despliegue automático en **Google Cloud Run**.
+- **Entorno de Desarrollo:** Configuración avanzada con `Docker Compose` y **watch mode** para una experiencia de desarrollo ágil y eficiente.

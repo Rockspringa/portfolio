@@ -1,7 +1,8 @@
 ---
 title: Hospital Management System
-description: Centralized project with CI/CD and micro services backend for managing patients, consultations, employees and medicines.
+description: A scalable microservices ecosystem designed to transform hospital management through cloud-native architecture and automated deployment.
 image: e-health-ward.png
+order: 2
 techs:
   - name: Java
     icon: java
@@ -22,35 +23,28 @@ repoUrls:
     label: Frontend
 ---
 
-## Detailed description
+## A Smart Health System
 
-### Backend
+This project is more than just a patient database; it is a full-stack infrastructure solution designed for high-availability environments where data integrity and scalability are critical.
 
-- Design of the micro services architecture
-- Each service is responsible for handling specific entities in its own database and communication with other services through REST APIs with `OpenFeign`
-- Security of the data using `Spring Security`, through the use of `JWT`, in its own service
-- The design includes an API Gateway that is responsible for handling incoming requests and redirecting them to the corresponding services
+### Backend & Microservices Architecture
 
-### Frontend
+- **Distributed Architecture:** I implemented a microservices ecosystem with `Spring Boot` where each module (patients, consultations, inventory) operates autonomously with its own database, ensuring isolation and fault tolerance.
+- **Efficient Communication:** Service orchestration through a centralized **API Gateway** and optimized inter-service communication using **OpenFeign**.
+- **Bank-Grade Security:** Robust authentication system based on **JWT** and SHA256 encryption, managed by a dedicated security service with `Spring Security`.
 
-- Based on `Angular` modules isolated by roles and permissions
-- Stylized with `Tailwind CSS` and `DaisyUI`
-- Design of the user experience to be responsive and simple for users
+### Frontend & High-Performance UX
 
-### Database
+- **Access Control (RBAC):** Interface developed in `Angular` featuring lazy loading and isolated modules based on medical staff roles and permissions.
+- **Modern Design:** Responsive and minimalist UI built with **Tailwind CSS** and **DaisyUI**, prioritizing speed of use in critical healthcare scenarios.
 
-- Database `PostgreSQL` used for storing the data of users, patients, consultations, employees and medicines
-- DDL scripts using `SQL` for the creation of each database
-- DML scripts using `SQL` for the insertion of base data to correctly set up the database
-- The database is located in `Neon`
-- Each service has roles and permissions to access its respective tables
+### Data Infrastructure
 
-### Deployment
+- **Cloud Persistence:** Relational databases managed in **Neon (PostgreSQL)**, optimized through custom DDL/DML scripts.
+- **DB-Level Security:** Implementation of least-privilege policies where each microservice can only access its specific tables.
 
-- `Docker` for building container images
-- `Docker Compose` for the deployment of the services locally, with `develop.watch` to detect code changes and automatically update the services
-- Optimized Docker images to reduce the size of containers and avoid basic security issues
-- `Docker Hub` for storing the Docker images
-- `Google Cloud Run` for the deployment of the Docker images in the cloud in the production environment and development environment
-- Continuous integration with `GitHub Actions` for running unit tests and coverage reports
-- Continuous delivery/deployment with `GitHub Actions` for building Docker images and deploying Docker images in the cloud
+### DevOps: CI/CD & Cloud-Native
+
+- **Optimized Containers:** `Docker` implementation using multi-stage builds to minimize the attack surface and artifact size.
+- **Modern CI/CD Flow:** Automated pipeline in **GitHub Actions** managing everything from unit testing to automatic deployment on **Google Cloud Run**.
+- **Development Environment:** Advanced setup with `Docker Compose` and **watch mode** for a seamless and agile developer experience.

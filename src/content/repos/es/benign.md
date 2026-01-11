@@ -1,23 +1,32 @@
 ---
 title: Clasificador de Tumores Benignos
-description: Proyecto sobre entrenamiento de redes neuronales para clasificar tumores de mama entre benignos y malignos.
+description: Implementación desde cero de un perceptron de multiples capas (MLP) para el diagnóstico asistido de tumores, con visualización de datos en tiempo real.
 image: benign-all.png
+order: 3
 techs:
   - name: Python
+    icon: python
+  - name: NumPy
+    icon: numpy
+  - name: Matplotlib
     icon: python
 repoUrls:
   - url: https://github.com/AvaibleUser/if-benign-else-malignant
 ---
 
-## Descripción detallada
+## Inteligencia Artificial sin "Cajas Negras"
 
-- Aplicación de escritorio para clasificar pacientes de cáncer de mama
-- La aplicación es capaz de clasificar el tipo de tumor de pacientes basándose en sus características
-- Usando el conjunto de datos de la biblioteca scikit-learn, entrena una red neuronal para clasificar los tumores
-- El modelo tiene parámetros configurables para ajustar el ritmo de aprendizaje y el número de épocas en la interfaz gráfica, y en el código deja la opción de cambiar el número de neuronas en la capa oculta, la función de activación y la función de costo
-- Tiene una interfaz gráfica para graficar los datos, elegir las características a usar para ver la correlación entre ellas, y ajustar los parámetros del modelo
-- Tiene una interfaz gráfica para entrenar el modelo, y ver los resultados de la entrenamiento, mostrando el error de clasificación y la frontera de decisión en un gráfico en tiempo real
-- La interfaz gráfica se construye usando tkinter y matplotlib
-- La red neuronal se implementa usando python puro con arrays numpy
-- El código está escrito siguiendo el modo pythonico, con el uso de sugerencias de tipo y el uso del módulo attrs
-- El diseño utiliza un enfoque multi-paradigma, usando tanto la programación orientada a objetos como la programación funcional
+A diferencia de usar librerías pre-construidas, este proyecto destaca por la **implementación manual de los algoritmos de aprendizaje**. Desarrollé una red neuronal funcional utilizando únicamente álgebra lineal y cálculo, aplicada a la clasificación crítica de tumores médicos.
+
+### Ingeniería de Software y Machine Learning
+
+- **Red Neuronal desde Cero:** Programación del algoritmo de *Backpropagation* y funciones de activación utilizando puramente **NumPy**, demostrando un dominio profundo de los fundamentos del Deep Learning.
+- **Entrenamiento Dinámico:** El modelo permite ajustar hiperparámetros (learning rate, épocas, neuronas ocultas y funciones de coste) directamente desde la interfaz, permitiendo experimentar con la convergencia del modelo.
+- **Arquitectura Pythonic:** Código limpio y robusto utilizando **Type Hinting** y el módulo `attrs` para una gestión de datos eficiente y profesional.
+- **Multiparadigma:** Diseño estructurado combinando Programación Orientada a Objetos (POO) para la arquitectura de la red y Programación Funcional para el procesamiento de datos.
+
+### Visualización y Análisis Científico
+
+- **Dashboard de Control:** Interfaz gráfica desarrollada con **Tkinter** que permite realizar Análisis Exploratorio de Datos (EDA) seleccionando variables para identificar correlaciones.
+- **Monitorización en Tiempo Real:** Visualización interactiva de la **frontera de decisión** y la curva de error durante el entrenamiento mediante la integración de **Matplotlib**, lo que permite ver cómo la IA "aprende" a separar los datos.
+- **Dataset de Referencia:** Utilización del dataset científico de cáncer de mama de *Scikit-learn* para validar la precisión del modelo contra estándares de la industria.

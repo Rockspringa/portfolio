@@ -78,7 +78,7 @@ if (!currentImage) {
             <Image
               src={currentImage()}
               alt={repo.data.title}
-              class="absolute top-0 inset-0 object-cover w-full h-full"
+              class="absolute top-0 inset-0 object-cover w-full h-full mask-t-from-0% mask-t-from-transparent mask-t-to-15% mask-t-to-base-100"
             />
           </figure>
         </div>
@@ -97,8 +97,8 @@ if (!currentImage) {
             <div class="flex flex-wrap gap-2 mt-2">
               {
                 repo.data.techs.map((tech) => (
-                  <span class="gap-1 badge badge-soft badge-sm badge-info">
-                    <Icon name={tech.icon} class="w-4 h-4 py-0.5" />
+                  <span class="gap-1 badge badge-soft badge-primary">
+                    <Icon name={tech.icon} class="size-5 py-0.5" />
                     {tech.name}
                   </span>
                 ))
@@ -118,6 +118,7 @@ if (!currentImage) {
                     target="_blank"
                     class="btn btn-outline btn-primary btn-sm"
                   >
+                    <Icon name="github" class="size-4" />
                     {t("project.details.repositories.source", label)}
                   </a>
                 ))
@@ -134,8 +135,11 @@ if (!currentImage) {
           "[&_h3]:text-2xl [&_h3]:text-primary [&_h3]:font-bold [&_h3]:mt-1",
           "[&_p]:text-xl/8 [&_p]:my-1",
           "[&_code]:font-mono [&_code]:text-accent [&_code]:bg-ctp-crust [&_code]:px-2 [&_code]:py-0.5 [&_code]:rounded",
-          "[&_ul]:list-disc [&_ul]:pl-4 [&_ul]:md:pl-12",
-          "[&_li]:my-2",
+          "[&_ul]:list-disc [&_ul]:pl-4 [&_ul]:md:pl-12 [&_li]:my-2",
+          "[&_img]:aspect-[2/1] [&_img]:h-full [&_img]:rounded-2xl [&_img]:shadow-2xl [&_img]:my-1",
+          "[&_img]:[mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]",
+          "[&_p:has(img)]:flex [&_p:has(img)]:flex-col [&_p:has(img)]:align-center",
+          "[&_img+em]:mx-auto [&_img+em]:text-sm [&_img+em]:text-secondary-content/65 [&_img+em]:italic [&_img+em]:mt-2 [&_img+em]:text-center",
         ]}
       >
         <RepoContent />

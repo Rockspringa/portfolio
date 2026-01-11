@@ -1,23 +1,32 @@
 ---
 title: Benign Tumors Classifier
-description: Project about training neural networks to classify mama tumors as benign or malignant.
+description: A from-scratch implementation of a Deep Neural Network (MLP) for assisted tumor diagnosis, featuring real-time data visualization.
 image: benign-all.png
+order: 3
 techs:
   - name: Python
+    icon: python
+  - name: NumPy
+    icon: numpy
+  - name: Matplotlib
     icon: python
 repoUrls:
   - url: https://github.com/AvaibleUser/if-benign-else-malignant
 ---
 
-## Detailed Description
+## AI Without "Black Boxes"
 
-- Desktop application to classify breast cancer patients
-- The application is able to classify patients tumor type based on their features
-- Using the dataset from the scikit-learn library it trains a neural network to classify tumors
-- The model has configurable parameters to adjust the learning rate and the number of epochs in the GUI, and in the code it leave the option to change the number of neurons in the hidden layer, the activation function and the cost function
-- It has a GUI to plot the data, choosing the features to use to see the correlation between them, and to adjust the parameters of the model
-- It has a GUI to train the model, and to see the results of the training, showing the error rate and the decision boundary in a real time plot
-- The GUI is built using tkinter and matplotlib
-- The neural network is implemented using raw python with numpy arrays
-- The code is written using the pythonic way, with the use of type hints and the use of the attrs module
-- The design use a multi-paradigm approach, using both object-oriented and functional programming
+Unlike using high-level libraries, this project stands out by **manually implementing the learning algorithms**. I developed a fully functional neural network using only linear algebra and calculus, applied to the critical classification of medical tumors.
+
+### Software Engineering & Machine Learning
+
+- **Neural Network from Scratch:** Implementation of the *Backpropagation* algorithm and activation functions using purely **NumPy**, demonstrating a deep understanding of Deep Learning fundamentals.
+- **Dynamic Training:** The model allows real-time adjustment of hyperparameters (learning rate, epochs, hidden neurons, and cost functions) directly from the UI to experiment with model convergence.
+- **Pythonic Architecture:** Clean and robust code leveraging **Type Hinting** and the `attrs` module for professional-grade data management.
+- **Multi-paradigm Design:** Structured approach combining Object-Oriented Programming (OOP) for the network architecture and Functional Programming for data processing.
+
+### Scientific Analysis & Visualization
+
+- **Control Dashboard:** A graphical interface built with **Tkinter** that enables Exploratory Data Analysis (EDA) by selecting variables to identify key correlations.
+- **Real-time Monitoring:** Interactive visualization of the **decision boundary** and the error curve during training via **Matplotlib** integration, showcasing how the AI "learns" to separate data points.
+- **Industry Dataset:** Leveraged the *Scikit-learn* breast cancer dataset to validate model accuracy against industry-standard benchmarks.

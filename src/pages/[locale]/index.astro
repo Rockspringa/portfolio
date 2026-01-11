@@ -22,6 +22,7 @@ export function getStaticPaths(): Params {
 const { locale } = Astro.params;
 const t = useTranslations(locale);
 const repos = await getCollection("repos", ({ id }) => id.startsWith(locale));
+repos.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <MainLayout title={t("base.title")} lang={locale} t={t}>

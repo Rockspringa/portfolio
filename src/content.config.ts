@@ -18,6 +18,7 @@ const repoSchema = z.object({
   ),
   demoUrl: z.string().optional(),
   image: z.string(),
+  order: z.number(),
 });
 
 const repos = defineCollection({
